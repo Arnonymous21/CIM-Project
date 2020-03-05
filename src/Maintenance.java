@@ -1,3 +1,7 @@
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class Maintenance
 {
 	private String leader;
@@ -106,6 +110,30 @@ public class Maintenance
 		return Integer.parseInt(this.jobNum);
 	}
 
+	public int getDaysTillEnd()
+	{
+		long millisBetween = getDateEpoch(endDate) - System.currentTimeMillis();
+		return (int)(millisBetween / 86400000);
+	}
+	private long getDateEpoch(String dateStr)
+	{
+		SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+		
+		
+		Date date = null;
+		try
+		{
+			date = dateFormat.parse(dateStr);
+		}
+		catch(ParseException e)
+		{
+			System.out.println("That should never have happened.");
+			System.exit(-1);
+		}
+		
+		return date.getTime();
+	}
+	
 	//Method time
 	public String toString() {
 		//NGL my program is jumping around and pissing me off

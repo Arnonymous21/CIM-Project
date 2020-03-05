@@ -1,0 +1,8 @@
+leader
+leader2
+0
+45
+endDate
+beginDate
+customerComp
+county

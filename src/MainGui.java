@@ -20,7 +20,7 @@ public class MainGui extends JFrame
             @Override
             public void actionPerformed(ActionEvent e)
             {
-                JFrame addFrame = new addGui("Add");
+                //JFrame addFrame = new addGui("Add");
 
             }
         });
